@@ -55,8 +55,8 @@ token获取说明:
       "msg": ""
     }
 
-获取蜜罐
-~~~~~~~~~
+获取蜜罐(Honeypot)
+~~~~~~~~~~~~~~~~~~
 
 说明：获取节点下所有的蜜罐信息
 
@@ -215,7 +215,9 @@ type类型说明
 请求下一页数据说明：
 
 只需将每次返回结果中的scroll_id，传给接口就行，其它参数无需再传
+
 当scroll_id过期时，需重新请求接口获取新的scroll_id
+
 获取得蜜罐日志方案二
 
 url: http://www.threatkey.com/api/user/getEnvLogs
