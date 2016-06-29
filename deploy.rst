@@ -1,15 +1,43 @@
-.. _api:
+.. _deploy:
 
-API Documentation
-=================
+蜜罐部署
+========
 
-All the API calls map the raw REST api as closely as possible, including the
-distinction between required and optional arguments to the calls. This means
-that the code makes distinction between positional and keyword arguments; we,
-however, recommend that people **use keyword arguments for all calls for
-consistency and safety**.
+帐号注册
+--------
+ToDo
 
-.. note::
+基本概念
+--------
+Node(节点): 部署蜜罐的一台机器(服务器)成为一个节点
+Honeypot(蜜罐): 一个蜜罐为一个存在漏洞的环境，内部运行着一个或多个服务，如
 
-    for compatibility with the Python ecosystem we use ``from_`` instead of
-    ``from`` and ``doc_type`` instead of ``type`` as parameter names.
+- elasticsearch蜜罐(单个服务): 运行着存在命令执行的elasticsearch服务的环境
+- ssh_redis蜜罐(多个服务): 运行着弱口令的ssh服务和无需认证的redis服务
+
+一个节点内可以部署多种蜜罐，因不同蜜罐会使用不同的端口(一个或多个)，如:
+
+- elasticsearch蜜罐(单端口): 使用9200端口
+- ssh_redis蜜罐(多端口): ssh服务使用22端口，redis服务使用6379端口
+
+配置要求
+--------
+系统要求: 内核版本3.10+，可通过``uname -a``命令查看
+推荐系统:
+
+- Ubuntu 14.04 +
+- Centos 7+
+
+系统配置:
+因系统配置依赖于节点内部署的蜜罐类型和个数
+推荐 2 核 4 GB以上的配置，能够稳定运行4-5个蜜罐服务
+
+磁盘要求:
+磁盘大小同样依赖于节点内部署的蜜罐类型和个数
+推荐50GB+的磁盘空间，并单独挂载在一个目录用于蜜罐部署
+
+
+
+
+创建节点
+--------
