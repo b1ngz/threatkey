@@ -15,7 +15,10 @@ API接口
 API说明
 ---------------
 
-获取用户所有的节点(Node)信息
+获取节点(Node)
+~~~~~~~~~~~~~~~~~~~
+
+说明: 获取用户下的所有的节点信息
 
 url: http://www.threatkey.com/api/user/getAllNode
  
@@ -52,7 +55,10 @@ token获取说明:
       "msg": ""
     }
 
-获取节点内所有漏洞环境
+获取蜜罐
+~~~~~~~~~
+
+说明：获取节点下所有的蜜罐信息
 
 url: http://www.threatkey.com/api/user/getAllEnv
 
@@ -67,9 +73,9 @@ method: POST
     
 字段说明:
 
-user_token(required)：用户token，请求令牌
+- user_token(required)：用户token，请求令牌
 
-node_token(required)：节点token
+- node_token(required)：节点token
 
 返回值::
 
@@ -102,6 +108,7 @@ node_token(required)：节点token
 node_token： 获取用户所有的节点信息 API请求返回节点信息中的 node_token 字段
 
 字段说明：
+
 - vid: 蜜罐唯一id
 - status：蜜罐状态，对应关系见后
 - type_id: 蜜罐类型id
@@ -115,7 +122,10 @@ node_token： 获取用户所有的节点信息 API请求返回节点信息中�
 - -1：部署失败
 - 3：等待创建
 
-获取得蜜罐日志
+获取蜜罐日志
+~~~~~~~~~~~~~~~~~~~
+
+说明：获取蜜罐对应的日志
 
 url: http://www.threatkey.com/api/user/getEnvScrollLogs
 
@@ -213,6 +223,7 @@ url: http://www.threatkey.com/api/user/getEnvLogs
 method: POST
 
 请求参数：
+
 - type(required): 日志类型
 - type_id(required): 蜜罐唯一 ID， 16位字符串
 - start_time: 日志起始日期。 格式 2016-06-23 19:37:20
