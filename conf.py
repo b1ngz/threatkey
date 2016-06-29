@@ -43,7 +43,7 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = u'threatkey'
+project = u'ThreatKey'
 copyright = u'2016, b1ng'
 
 # The version info for the project you're documenting, acts as replacement for
